@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS - Culture of Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', 'Amazon Ember', -apple-system, sans-serif;
+      background: #f4f4f4;
+      color: #232f3e;
+      min-height: 100vh;
+    }
+
+    /* ── Header / Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0a1628 0%, #1a1a2e 30%, #232f3e 50%, #4a2872 75%, #c44bc4 90%, #ff9900 100%);
+      padding: 40px 60px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(255,153,0,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .aws-logo {
+      width: 80px;
+      margin-bottom: 24px;
+    }
+
+    .aws-logo svg { width: 100%; height: auto; }
+
+    .hero-subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff9900;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      max-width: 700px;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 3px;
+      background: #ff9900;
+      margin-top: 20px;
+    }
+
+    /* ── Main Content ── */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 40px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* ── Event Details ── */
+    .event-details h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #232f3e;
+      margin-bottom: 20px;
+    }
+
+    .event-details p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .event-meta {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .meta-item:last-child { border-bottom: none; }
+
+    .meta-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: #ff9900;
+      margin-top: 2px;
+    }
+
+    .meta-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: #232f3e;
+      margin-top: 2px;
+    }
+
+    /* ── Form ── */
+    .form-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .form-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #232f3e;
+      margin-bottom: 6px;
+    }
+
+    .form-card .form-sub {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .form-group label .required {
+      color: #d13212;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      border: 1.5px solid #d5d5d5;
+      border-radius: 8px;
+      background: #fafafa;
+      color: #232f3e;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #ff9900;
+      box-shadow: 0 0 0 3px rgba(255,153,0,0.15);
+      background: #fff;
+    }
+
+    .form-group input::placeholder { color: #aaa; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: inherit;
+      color: #fff;
+      background: linear-gradient(135deg, #ff9900, #ec7211);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255,153,0,0.35);
+    }
+
+    .btn-submit:active { transform: translateY(0); }
+
+    /* ── Success Message ── */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .success-message .check-icon {
+      width: 64px;
+      height: 64px;
+      color: #1a8a3f;
+      margin-bottom: 16px;
+    }
+
+    .success-message h4 {
+      font-size: 20px;
+      color: #232f3e;
+      margin-bottom: 8px;
+    }
+
+    .success-message p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 24px 40px;
+      font-size: 12px;
+      color: #888;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero { padding: 30px 24px 36px; }
+      .hero-title { font-size: 32px; }
+      .main {
+        grid-template-columns: 1fr;
+        padding: 30px 20px 40px;
+        gap: 30px;
+      }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="aws-logo">
+      <svg viewBox="0 0 304 182" xmlns="http://www.w3.org/2000/svg">
+        <path d="M86.4 66.4c0 3.7.4 6.7 1.1 8.9.8 2.2 1.8 4.6 3.2 7.2.5.8.7 1.6.7 2.3 0 1-.6 2-1.9 3l-6.3 4.2c-.9.6-1.8.9-2.6.9-1 0-2-.5-3-1.4-1.4-1.5-2.6-3.1-3.6-4.7-1-1.7-2-3.6-3.1-5.9-7.8 9.2-17.6 13.8-29.4 13.8-8.4 0-15.1-2.4-20-7.2-4.9-4.8-7.4-11.2-7.4-19.2 0-8.5 3-15.4 9.1-20.6 6.1-5.2 14.2-7.8 24.5-7.8 3.4 0 6.9.3 10.6.8 3.7.5 7.5 1.3 11.5 2.2v-7.3c0-7.6-1.6-12.9-4.7-16-3.2-3.1-8.6-4.6-16.3-4.6-3.5 0-7.1.4-10.8 1.3-3.7.9-7.3 2-10.8 3.4-1.6.7-2.8 1.1-3.5 1.3-.7.2-1.2.3-1.6.3-1.4 0-2.1-1-2.1-3.1v-4.9c0-1.6.2-2.8.7-3.5.5-.7 1.4-1.4 2.8-2.1 3.5-1.8 7.7-3.3 12.6-4.5C41 1.9 46.2 1.3 51.7 1.3c12.2 0 21.1 2.8 26.8 8.3 5.6 5.6 8.4 14 8.4 25.4v33.4h-.5zM45.8 81.6c3.3 0 6.7-.6 10.3-1.8 3.6-1.2 6.8-3.4 9.5-6.4 1.6-1.9 2.8-4 3.4-6.4.6-2.4 1-5.3 1-8.7v-4.2c-2.9-.7-6-1.3-9.2-1.7-3.2-.4-6.3-.6-9.4-.6-6.7 0-11.6 1.3-14.9 4-3.3 2.7-4.9 6.5-4.9 11.5 0 4.7 1.2 8.2 3.7 10.6 2.4 2.5 5.9 3.7 10.5 3.7zm80.3 10.8c-1.8 0-3-.3-3.8-1-.8-.6-1.5-2-2.1-3.9L96.7 10.2c-.6-2-.9-3.3-.9-4 0-1.6.8-2.5 2.4-2.5h9.8c1.9 0 3.2.3 3.9 1 .8.6 1.4 2 2 3.9l16.8 66.2 15.6-66.2c.5-2 1.1-3.3 1.9-3.9.8-.6 2.2-1 4-1h8c1.9 0 3.2.3 4 1 .8.6 1.5 2 1.9 3.9l15.8 67 17.3-67c.6-2 1.3-3.3 2-3.9.8-.6 2.1-1 3.9-1h9.3c1.6 0 2.5.8 2.5 2.5 0 .5-.1 1-.2 1.6-.1.6-.3 1.4-.7 2.5l-24.1 77.3c-.6 2-1.3 3.3-2.1 3.9-.8.6-2.1 1-3.8 1h-8.6c-1.9 0-3.2-.3-4-1-.8-.7-1.5-2-1.9-4L156 23l-15.4 64.4c-.5 2-1.1 3.3-1.9 4-.8.7-2.2 1-4 1h-8.6zm128.5 2.7c-5.2 0-10.4-.6-15.4-1.8-5-1.2-8.9-2.5-11.5-4-1.6-.9-2.7-1.9-3.1-2.8-.4-.9-.6-1.9-.6-2.8v-5.1c0-2.1.8-3.1 2.3-3.1.6 0 1.2.1 1.8.3.6.2 1.5.6 2.5 1 3.4 1.5 7.1 2.7 11 3.5 4 .8 7.9 1.2 11.9 1.2 6.3 0 11.2-1.1 14.6-3.3 3.4-2.2 5.2-5.4 5.2-9.5 0-2.8-.9-5.1-2.7-7-1.8-1.9-5.2-3.6-10.1-5.2L246 52c-7.3-2.3-12.7-5.7-16-10.2-3.3-4.4-5-9.3-5-14.5 0-4.2.9-7.9 2.7-11.1 1.8-3.2 4.2-6 7.2-8.2 3-2.3 6.4-4 10.4-5.2 4-1.2 8.2-1.7 12.6-1.7 2.2 0 4.5.1 6.7.4 2.3.3 4.4.7 6.5 1.1 2 .5 3.9 1 5.7 1.6 1.8.6 3.2 1.2 4.2 1.8 1.4.8 2.4 1.6 3 2.5.6.8.9 1.9.9 3.3v4.7c0 2.1-.8 3.2-2.3 3.2-.8 0-2.1-.4-3.8-1.2-5.7-2.6-12.1-3.9-19.2-3.9-5.7 0-10.2.9-13.3 2.8-3.1 1.9-4.7 4.8-4.7 8.9 0 2.8 1 5.2 3 7.1 2 1.9 5.7 3.8 11 5.5l14.2 4.5c7.2 2.3 12.4 5.5 15.5 9.6 3.1 4.1 4.6 8.8 4.6 14 0 4.3-.9 8.2-2.6 11.6-1.8 3.4-4.2 6.4-7.3 8.8-3.1 2.5-6.8 4.3-11.1 5.6-4.5 1.4-9.2 2.1-14.3 2.1z" fill="#ffffff"/>
+        <path d="M273.5 143.7c-32.9 24.3-80.7 37.2-121.8 37.2-57.6 0-109.5-21.3-148.7-56.7-3.1-2.8-.3-6.6 3.4-4.4 42.4 24.6 94.7 39.5 148.8 39.5 36.5 0 76.6-7.6 113.5-23.2 5.5-2.5 10.2 3.6 4.8 7.6z" fill="#FF9900"/>
+        <path d="M287.2 128.1c-4.2-5.4-27.8-2.6-38.5-1.3-3.2.4-3.7-2.4-.8-4.5 18.8-13.2 49.7-9.4 53.3-5 3.6 4.5-1 35.4-18.6 50.2-2.7 2.3-5.3 1.1-4.1-1.9 4-9.9 12.9-32.2 8.7-37.5z" fill="#FF9900"/>
+      </svg>
+    </div>
+    <p class="hero-subtitle">Innovation &amp; Transformation Program</p>
+    <h1 class="hero-title">Culture of Innovation</h1>
+    <div class="hero-divider"></div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <!-- Left: Event Info -->
+    <section class="event-details">
+      <h2>Amazon's Culture of Innovation</h2>
+      <p>
+        Amazon has a peculiar approach to innovation that is intrinsically linked to how we use
+        technology and organize our teams. In this session, we share with customers best practices
+        and approaches to how we sustain innovation at scale through four interdependent elements:
+        <strong>culture, mechanisms, architecture, and organization</strong>.
+      </p>
+      <p>
+        We dive deep on components including Leadership Principles; building sustainable flywheels;
+        our narrative culture and democratizing innovation through Working Backwards; how AWS enables
+        experimentation and rapid launch and learning; our two-pizza team organizational approach;
+        and much more.
+      </p>
+
+      <div class="event-meta">
+        <!-- Speaker -->
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <div>
+            <div class="meta-label">Speaker</div>
+            <div class="meta-value">Juan Ignacio Filips</div>
+            <div style="font-size:13px;color:#666;margin-top:2px;">Country Manager — Argentina, Uruguay &amp; Paraguay</div>
+          </div>
+        </div>
+
+        <!-- Date -->
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <div>
+            <div class="meta-label">Fecha</div>
+            <div class="meta-value">12 de Mayo, 2025</div>
+          </div>
+        </div>
+
+        <!-- Time -->
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div>
+            <div class="meta-label">Hora</div>
+            <div class="meta-value">3:00 PM EST (1 hora)</div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div>
+            <div class="meta-label">Ubicación</div>
+            <div class="meta-value">Bayhill 19, Hyatt Meeting Room</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: Registration Form -->
+    <section class="form-card">
+      <h3>Registrate</h3>
+      <p class="form-sub">Completá el formulario para reservar tu lugar.</p>
+
+      <form id="registrationForm" novalidate>
+        <!-- Formspree hidden fields -->
+        <input type="hidden" name="_subject" value="Nueva inscripción — Culture of Innovation (12 Mayo)">
+        <input type="hidden" name="_replyto" id="replyTo">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">Nombre <span class="required">*</span></label>
+            <input type="text" id="firstName" name="Nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Apellido <span class="required">*</span></label>
+            <input type="text" id="lastName" name="Apellido" placeholder="Tu apellido" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="Email" placeholder="nombre@empresa.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Rol <span class="required">*</span></label>
+          <input type="text" id="role" name="Rol" placeholder="Ej: CTO, VP Engineering, Director IT" required>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Empresa <span class="required">*</span></label>
+          <input type="text" id="company" name="Empresa" placeholder="Nombre de tu empresa" required>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">Confirmar inscripción</button>
+      </form>
+
+      <div class="success-message" id="successMessage">
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h4>¡Registro exitoso!</h4>
+        <p>Tu inscripción ha sido confirmada. Te enviaremos un recordatorio a tu email antes del evento.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved. Amazon Confidential and Trademark.
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────
+    // IMPORTANTE: Reemplazá YOUR_FORM_ID con tu ID de Formspree.
+    // 1. Andá a https://formspree.io y creá una cuenta gratuita.
+    // 2. Creá un nuevo form y configurá el email destino: miramonl@amazon.com
+    // 3. Copiá el form ID (ej: "xpzvqkdl") y pegalo abajo.
+    // ─────────────────────────────────────────────
+    const FORMSPREE_ID = 'mvzdvkgl';
+    const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
+
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Validation
+      const fields = ['firstName', 'lastName', 'email', 'role', 'company'];
+      let valid = true;
+
+      fields.forEach(function(id) {
+        const input = document.getElementById(id);
+        if (!input.value.trim()) {
+          input.style.borderColor = '#d13212';
+          valid = false;
+        } else {
+          input.style.borderColor = '#d5d5d5';
+        }
+      });
+
+      const emailInput = document.getElementById('email');
+      if (emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        emailInput.style.borderColor = '#d13212';
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Set reply-to
+      document.getElementById('replyTo').value = emailInput.value;
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(FORMSPREE_URL, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          document.querySelector('.form-card h3').style.display = 'none';
+          document.querySelector('.form-sub').style.display = 'none';
+          document.getElementById('successMessage').style.display = 'block';
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirmar inscripción';
+        alert('Hubo un error al enviar el formulario. Por favor intentá de nuevo.');
+      }
+    });
+
+    // Clear error on input
+    document.querySelectorAll('#registrationForm input').forEach(function(input) {
+      input.addEventListener('input', function() {
+        this.style.borderColor = '#d5d5d5';
+      });
+    });
+  </script>
+</body>
+</html>
