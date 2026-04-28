@@ -3,571 +3,418 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AWS - Cultura de Innovación | SAP Sapphire 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>F1 Miami 2026 – Customer Attendees</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-      font-family: 'Inter', 'Amazon Ember', -apple-system, sans-serif;
-      background: #f4f4f4;
-      color: #232f3e;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
       min-height: 100vh;
     }
-
-    /* ── Header / Hero ── */
     .hero {
-      background: linear-gradient(135deg, #0a1628 0%, #1a1a2e 30%, #232f3e 50%, #4a2872 75%, #c44bc4 90%, #ff9900 100%);
-      padding: 40px 60px 50px;
+      background: #0a0a0a;
+      min-height: 420px;
+      padding: 60px 60px 50px;
       position: relative;
       overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 80%;
-      height: 200%;
-      background: radial-gradient(ellipse, rgba(255,153,0,0.15) 0%, transparent 60%);
-      pointer-events: none;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 120%, rgba(225,6,0,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255,102,0,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 30% at 10% 80%, rgba(225,6,0,0.08) 0%, transparent 50%);
     }
-
-    .aws-logo {
-      width: 80px;
-      margin-bottom: 24px;
-    }
-
-    .aws-logo svg { width: 100%; height: auto; }
-
-    .hero-subtitle {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #ff9900;
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-size: 48px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.15;
-      max-width: 700px;
-    }
-
-    .hero-divider {
-      width: 60px;
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
       height: 3px;
-      background: #ff9900;
-      margin-top: 20px;
+      background: linear-gradient(90deg, transparent, #e10600, #ff6600, #e10600, transparent);
     }
-
-    /* ── Main Content ── */
-    .main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 50px 40px 60px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: start;
-    }
-
-    /* ── Event Details ── */
-    .event-details h2 {
-      font-size: 26px;
-      font-weight: 700;
-      color: #232f3e;
-      margin-bottom: 20px;
-    }
-
-    .event-details p {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 20px;
-    }
-
-    .event-meta {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 24px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-
-    .meta-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .meta-item:last-child { border-bottom: none; }
-
-    .meta-icon {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      color: #ff9900;
-      margin-top: 2px;
-    }
-
-    .meta-label {
+    .hero > * { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(225,6,0,0.25);
+      border: 1px solid rgba(225,6,0,0.5);
+      color: #ff4444;
+      padding: 6px 18px;
+      border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #888;
+      margin-bottom: 20px;
     }
+    .hero h1 { font-size: 56px; font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 10px; }
+    .hero h1 span { color: #e10600; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.6); font-weight: 300; }
+    .hero-stats { display: flex; justify-content: center; gap: 50px; margin-top: 35px; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 36px; font-weight: 800; color: #e10600; }
+    .hero-stat .label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
-    .meta-value {
-      font-size: 15px;
-      font-weight: 500;
-      color: #232f3e;
-      margin-top: 2px;
+    .container { max-width: 1400px; margin: 0 auto; padding: 40px 40px; }
+    .section-label {
+      font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.4);
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;
     }
-
-    /* ── Form ── */
-    .form-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 36px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; }
+    .card {
+      background: #151515; border: 1px solid #222; border-radius: 16px;
+      overflow: hidden; transition: transform 0.3s, border-color 0.3s;
     }
-
-    .form-card h3 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #232f3e;
-      margin-bottom: 6px;
+    .card:hover { transform: translateY(-4px); border-color: #e10600; }
+    .card-header { display: flex; align-items: center; gap: 16px; padding: 24px 24px 16px; }
+    .avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, #e10600, #ff6600);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
     }
-
-    .form-card .form-sub {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 28px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #444;
-      margin-bottom: 6px;
-    }
-
-    .form-group label .required {
-      color: #d13212;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 12px 14px;
-      font-size: 14px;
-      font-family: inherit;
-      border: 1.5px solid #d5d5d5;
-      border-radius: 8px;
-      background: #fafafa;
-      color: #232f3e;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #ff9900;
-      box-shadow: 0 0 0 3px rgba(255,153,0,0.15);
-      background: #fff;
-    }
-
-    .form-group input::placeholder { color: #aaa; }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      margin-top: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      font-family: inherit;
-      color: #fff;
-      background: linear-gradient(135deg, #ff9900, #ec7211);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.2s;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(255,153,0,0.35);
-    }
-
-    .btn-submit:active { transform: translateY(0); }
-
-    /* ── Success Message ── */
-    .success-message {
-      display: none;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .success-message .check-icon {
-      width: 64px;
-      height: 64px;
-      color: #1a8a3f;
-      margin-bottom: 16px;
-    }
-
-    .success-message h4 {
-      font-size: 20px;
-      color: #232f3e;
-      margin-bottom: 8px;
-    }
-
-    .success-message p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* ── Footer ── */
-    .footer {
-      text-align: center;
-      padding: 24px 40px;
-      font-size: 12px;
-      color: #888;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 768px) {
-      .hero { padding: 30px 24px 36px; }
-      .hero-title { font-size: 32px; }
-      .main {
-        grid-template-columns: 1fr;
-        padding: 30px 20px 40px;
-        gap: 30px;
-      }
-      .form-row { grid-template-columns: 1fr; }
+    .card-name { font-size: 18px; font-weight: 700; }
+    .card-title { font-size: 13px; color: #e10600; font-weight: 500; margin-top: 2px; }
+    .card-company { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .card-body { padding: 0 24px 24px; }
+    .card-bio { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.7); }
+    @media (max-width: 860px) {
+      .hero { padding: 40px 24px; min-height: 320px; }
+      .hero h1 { font-size: 32px; }
+      .container { padding: 24px 16px; }
+      .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="aws-logo">
-      <svg viewBox="0 0 304 182" xmlns="http://www.w3.org/2000/svg">
-        <path d="M86.4 66.4c0 3.7.4 6.7 1.1 8.9.8 2.2 1.8 4.6 3.2 7.2.5.8.7 1.6.7 2.3 0 1-.6 2-1.9 3l-6.3 4.2c-.9.6-1.8.9-2.6.9-1 0-2-.5-3-1.4-1.4-1.5-2.6-3.1-3.6-4.7-1-1.7-2-3.6-3.1-5.9-7.8 9.2-17.6 13.8-29.4 13.8-8.4 0-15.1-2.4-20-7.2-4.9-4.8-7.4-11.2-7.4-19.2 0-8.5 3-15.4 9.1-20.6 6.1-5.2 14.2-7.8 24.5-7.8 3.4 0 6.9.3 10.6.8 3.7.5 7.5 1.3 11.5 2.2v-7.3c0-7.6-1.6-12.9-4.7-16-3.2-3.1-8.6-4.6-16.3-4.6-3.5 0-7.1.4-10.8 1.3-3.7.9-7.3 2-10.8 3.4-1.6.7-2.8 1.1-3.5 1.3-.7.2-1.2.3-1.6.3-1.4 0-2.1-1-2.1-3.1v-4.9c0-1.6.2-2.8.7-3.5.5-.7 1.4-1.4 2.8-2.1 3.5-1.8 7.7-3.3 12.6-4.5C41 1.9 46.2 1.3 51.7 1.3c12.2 0 21.1 2.8 26.8 8.3 5.6 5.6 8.4 14 8.4 25.4v33.4h-.5zM45.8 81.6c3.3 0 6.7-.6 10.3-1.8 3.6-1.2 6.8-3.4 9.5-6.4 1.6-1.9 2.8-4 3.4-6.4.6-2.4 1-5.3 1-8.7v-4.2c-2.9-.7-6-1.3-9.2-1.7-3.2-.4-6.3-.6-9.4-.6-6.7 0-11.6 1.3-14.9 4-3.3 2.7-4.9 6.5-4.9 11.5 0 4.7 1.2 8.2 3.7 10.6 2.4 2.5 5.9 3.7 10.5 3.7zm80.3 10.8c-1.8 0-3-.3-3.8-1-.8-.6-1.5-2-2.1-3.9L96.7 10.2c-.6-2-.9-3.3-.9-4 0-1.6.8-2.5 2.4-2.5h9.8c1.9 0 3.2.3 3.9 1 .8.6 1.4 2 2 3.9l16.8 66.2 15.6-66.2c.5-2 1.1-3.3 1.9-3.9.8-.6 2.2-1 4-1h8c1.9 0 3.2.3 4 1 .8.6 1.5 2 1.9 3.9l15.8 67 17.3-67c.6-2 1.3-3.3 2-3.9.8-.6 2.1-1 3.9-1h9.3c1.6 0 2.5.8 2.5 2.5 0 .5-.1 1-.2 1.6-.1.6-.3 1.4-.7 2.5l-24.1 77.3c-.6 2-1.3 3.3-2.1 3.9-.8.6-2.1 1-3.8 1h-8.6c-1.9 0-3.2-.3-4-1-.8-.7-1.5-2-1.9-4L156 23l-15.4 64.4c-.5 2-1.1 3.3-1.9 4-.8.7-2.2 1-4 1h-8.6zm128.5 2.7c-5.2 0-10.4-.6-15.4-1.8-5-1.2-8.9-2.5-11.5-4-1.6-.9-2.7-1.9-3.1-2.8-.4-.9-.6-1.9-.6-2.8v-5.1c0-2.1.8-3.1 2.3-3.1.6 0 1.2.1 1.8.3.6.2 1.5.6 2.5 1 3.4 1.5 7.1 2.7 11 3.5 4 .8 7.9 1.2 11.9 1.2 6.3 0 11.2-1.1 14.6-3.3 3.4-2.2 5.2-5.4 5.2-9.5 0-2.8-.9-5.1-2.7-7-1.8-1.9-5.2-3.6-10.1-5.2L246 52c-7.3-2.3-12.7-5.7-16-10.2-3.3-4.4-5-9.3-5-14.5 0-4.2.9-7.9 2.7-11.1 1.8-3.2 4.2-6 7.2-8.2 3-2.3 6.4-4 10.4-5.2 4-1.2 8.2-1.7 12.6-1.7 2.2 0 4.5.1 6.7.4 2.3.3 4.4.7 6.5 1.1 2 .5 3.9 1 5.7 1.6 1.8.6 3.2 1.2 4.2 1.8 1.4.8 2.4 1.6 3 2.5.6.8.9 1.9.9 3.3v4.7c0 2.1-.8 3.2-2.3 3.2-.8 0-2.1-.4-3.8-1.2-5.7-2.6-12.1-3.9-19.2-3.9-5.7 0-10.2.9-13.3 2.8-3.1 1.9-4.7 4.8-4.7 8.9 0 2.8 1 5.2 3 7.1 2 1.9 5.7 3.8 11 5.5l14.2 4.5c7.2 2.3 12.4 5.5 15.5 9.6 3.1 4.1 4.6 8.8 4.6 14 0 4.3-.9 8.2-2.6 11.6-1.8 3.4-4.2 6.4-7.3 8.8-3.1 2.5-6.8 4.3-11.1 5.6-4.5 1.4-9.2 2.1-14.3 2.1z" fill="#ffffff"/>
-        <path d="M273.5 143.7c-32.9 24.3-80.7 37.2-121.8 37.2-57.6 0-109.5-21.3-148.7-56.7-3.1-2.8-.3-6.6 3.4-4.4 42.4 24.6 94.7 39.5 148.8 39.5 36.5 0 76.6-7.6 113.5-23.2 5.5-2.5 10.2 3.6 4.8 7.6z" fill="#FF9900"/>
-        <path d="M287.2 128.1c-4.2-5.4-27.8-2.6-38.5-1.3-3.2.4-3.7-2.4-.8-4.5 18.8-13.2 49.7-9.4 53.3-5 3.6 4.5-1 35.4-18.6 50.2-2.7 2.3-5.3 1.1-4.1-1.9 4-9.9 12.9-32.2 8.7-37.5z" fill="#FF9900"/>
-      </svg>
+<!-- F1 Miami Hero Image from formula1.com -->
+<div style="position:relative; width:100%; height:350px; overflow:hidden; border-bottom:3px solid #e10600;">
+  <img src="https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Miami.webp"
+       alt="Formula 1 Miami Grand Prix – Miami International Autodrome"
+       style="width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block;">
+  <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(10,10,10,0.85) 100%);"></div>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">Exclusive Customer Event</div>
+  <h1><span>F1</span> Miami Grand Prix 2026</h1>
+  <p>Customer Executive Briefing – Attendee Profiles</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">27</div><div class="label">Attendees</div></div>
+    <div class="hero-stat"><div class="num">23</div><div class="label">Companies</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section-label">All Attendees</div>
+<div class="cards-grid">
+
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">EF</div>
+      <div><div class="card-name">Eddie Fox</div><div class="card-title">CTO</div><div class="card-company">MetTel</div></div>
     </div>
-    <p class="hero-subtitle">Programa de Innovación &amp; Transformación · SAP Sapphire 2026</p>
-    <h1 class="hero-title">Cultura de Innovación</h1>
-    <div class="hero-divider"></div>
-  </header>
+    <div class="card-body">
+      <p class="card-bio">Ejecutivo de tecnología con más de 40 años en telecomunicaciones. Más de 25 años en MetTel, donde lidera la planificación, despliegue y operaciones de la infraestructura de red. Miembro del Forbes Technology Council y CNBC Technology Executive Council. Reconocido por su enfoque en automatización de redes, SD-WAN y la transición hacia 5G y FWA. Impulsa sesiones bimestrales de productividad con AI dentro de MetTel.</p>
+    </div>
+  </div>
 
-  <!-- Main -->
-  <main class="main">
-    <!-- Left: Event Info -->
-    <section class="event-details">
-      <h2>Cultura de Innovación de Amazon</h2>
-      <p>
-        Amazon tiene un enfoque particular hacia la innovación, intrínsecamente ligado a cómo
-        utilizamos la tecnología y organizamos nuestros equipos. En esta sesión, compartimos
-        con los clientes las mejores prácticas y enfoques sobre cómo sostenemos la innovación
-        a escala a través de cuatro elementos interdependientes:
-        <strong>cultura, mecanismos, arquitectura y organización</strong>.
-      </p>
-      <p>
-        Profundizaremos en componentes como los Principios de Liderazgo; la construcción de
-        flywheels sostenibles; nuestra cultura narrativa y la democratización de la innovación
-        a través de Working Backwards; cómo AWS habilita la experimentación y el lanzamiento
-        rápido; nuestro modelo organizacional de equipos two-pizza; y mucho más.
-      </p>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">LG</div>
+      <div><div class="card-name">Luis Goicouria</div><div class="card-title">SVP, Media</div><div class="card-company">PGA TOUR</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Líder senior de medios en PGA TOUR, supervisa Digital Product & Operations, PGA TOUR Entertainment, International Media y Golf Technologies. Fue clave en la planificación y construcción de los nuevos PGA TOUR Studios (165,000 sq ft) en Ponte Vedra Beach. Bajo su liderazgo, PGA Tour Live transmite 35 torneos al año. Reconocido como Power Player en Sports Streaming por Sports Business Journal.</p>
+    </div>
+  </div>
 
-      <div class="event-meta">
-        <!-- Speaker -->
-        <div class="meta-item">
-          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-          </svg>
-          <div>
-            <div class="meta-label">Orador</div>
-            <div class="meta-value">Juan Ignacio Filips</div>
-            <div style="font-size:13px;color:#666;margin-top:2px;">Country Manager — Argentina, Uruguay &amp; Paraguay</div>
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">BR</div>
+      <div><div class="card-name">Brent Rich</div><div class="card-title">VP, Global Infrastructure & Operations</div><div class="card-company">Riot Games</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Head de Global Infrastructure & Operations en Riot Games, reportando al CTO. Lideró la migración completa de Riot desde data centers on-premise a la nube, cerrando 19 data centers globalmente. Previamente fue Director de Network Deployment en AWS, VP de Infrastructure Engineering en GAP, y SVP de Global Operations en Joyent. Keynote speaker en AWS re:Invent 2023.</p>
+    </div>
+  </div>
 
-        <!-- Date -->
-        <div class="meta-item">
-          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          <div>
-            <div class="meta-label">Fecha</div>
-            <div class="meta-value">12 de Mayo, 2026</div>
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">MP</div>
+      <div><div class="card-name">Mike Perez</div><div class="card-title">COO / CTO</div><div class="card-company">Stats Perform</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">COO de Stats Perform desde 2018, supervisa operaciones de negocio y estrategias de producción. Previamente fundó Tidewater Group, consultora de estrategia operacional en Washington D.C. para Fortune 500 y contratistas gubernamentales. Reconocido como "Entrepreneur of the Year" por Entrepreneur Magazine y "Forty Under 40" por Washington Business Journal. Graduado en ciencias políticas de la University of Washington.</p>
+    </div>
+  </div>
 
-        <!-- Time -->
-        <div class="meta-item">
-          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-          </svg>
-          <div>
-            <div class="meta-label">Hora</div>
-            <div class="meta-value">3:00 PM EST (1 hora)</div>
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">JS</div>
+      <div><div class="card-name">Jimmy Shaffer</div><div class="card-title">VP, Cloud Transformation</div><div class="card-company">Hearst</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Líder senior de tecnología en Hearst, donde dirige el Cloud Center of Excellence y la gobernanza cloud para cientos de subsidiarias. Arquitectó la transformación de Hearst a 80% de adopción cloud, una de las tasas más altas entre grandes empresas. Impulsa una estrategia multi-cloud con enfoque en colocar cada workload en el entorno adecuado según la necesidad. Especializado en arquitecturas serverless.</p>
+    </div>
+  </div>
 
-        <!-- Event -->
-        <div class="meta-item">
-          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          <div>
-            <div class="meta-label">Evento</div>
-            <div class="meta-value">SAP Sapphire 2026</div>
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">KK</div>
+      <div><div class="card-name">Kevin Keeler</div><div class="card-title">VP, Digital Platform Engineering & Enterprise Infrastructure</div><div class="card-company">A+E Global Media</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Ejecutivo de tecnología con 14 años de experiencia en IT, incluyendo administración de sistemas e implementación a gran escala. Veterano del United States Marine Corps. Experto en soluciones de datacenter virtualizadas, gestiona la arquitectura Windows y Unix para más de 5,000 sistemas a nivel mundial. Responsable de políticas de seguridad alineadas con requisitos DOD y PCI.</p>
+    </div>
+  </div>
 
-        <!-- Location -->
-        <div class="meta-item">
-          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-          </svg>
-          <div>
-            <div class="meta-label">Ubicación</div>
-            <div class="meta-value">Bayhill 19, Hyatt Meeting Room</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">GN</div>
+      <div><div class="card-name">Greg Nelson</div><div class="card-title">President, Youth, Club & High School</div><div class="card-company">Hudl</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Veterano de 16 años en Hudl, promovido a Presidente de la división más grande de la compañía en abril 2026. Ha escalado desde VP hasta SVP & General Manager. Ex-coach de football a nivel high school y college, incluyendo Offensive Coordinator en Concordia University, Nebraska. Ha liderado la expansión del mercado deportivo competitivo integrando video, livestreaming, wearables y AI analytics.</p>
+    </div>
+  </div>
 
-    <!-- Right: Registration Form -->
-    <section class="form-card">
-      <h3>Registrate</h3>
-      <p class="form-sub">Completá el formulario para reservar tu lugar.</p>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">SJ</div>
+      <div><div class="card-name">Scott Johnson</div><div class="card-title">CTO</div><div class="card-company">EBSCO Information Services</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">EVP y CTO de EBSCO Information Services (~$3B revenue), con más de 25 años de liderazgo en innovación tecnológica y transformación digital. Define la visión tecnológica global, dirección arquitectónica e innovación de producto. Previamente lideró transformaciones de plataformas cloud a gran escala en Equifax. MBA y BBA en MIS de la University of Georgia. Advisor de startups y keynote speaker en FinOps.</p>
+    </div>
+  </div>
 
-      <form id="registrationForm" novalidate>
-        <!-- Formspree hidden fields -->
-        <input type="hidden" name="_subject" value="Nueva inscripción — Cultura de Innovación · SAP Sapphire 2026 (12 Mayo)">
-        <input type="hidden" name="_replyto" id="replyTo">
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">DK</div>
+      <div><div class="card-name">David Kline</div><div class="card-title">CTO</div><div class="card-company">Take-Two Interactive</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">CTO de Take-Two Interactive ($5.63B revenue) desde julio 2025. Previamente CTO de News Corp (2020-2025), donde lideró transformación hybrid-cloud e iniciativas de GenAI y data-mesh. Antes fue CTO & CIO de Viacom (2010-2019), unificando operaciones tecnológicas globales y modernizando plataformas de broadcast, VOD y publicidad. Reconocido líder en transformaciones cloud-forward a escala global.</p>
+    </div>
+  </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">Nombre <span class="required">*</span></label>
-            <input type="text" id="firstName" name="Nombre" placeholder="Tu nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="lastName">Apellido <span class="required">*</span></label>
-            <input type="text" id="lastName" name="Apellido" placeholder="Tu apellido" required>
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">RD</div>
+      <div><div class="card-name">Rudi De Sousa</div><div class="card-title">SVP Software Engineering</div><div class="card-company">Take-Two Interactive</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">SVP de Software Engineering en Take-Two Interactive desde marzo 2026. Previamente Deputy CTO en News Corp durante 5 años bajo David Kline. Lidera iniciativas de ingeniería cross-label y es decision-maker técnico clave para shared services y adopción de AI en los estudios de Take-Two (Rockstar, 2K, Zynga, Gearbox). Fanático de F1.</p>
+    </div>
+  </div>
 
-        <div class="form-group">
-          <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="Email" placeholder="nombre@empresa.com" required>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">CG</div>
+      <div><div class="card-name">Chris Griffiths</div><div class="card-title">CTO</div><div class="card-company">Plume Design</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">CTO de Plume Design, empresa líder en plataformas de experiencia para ISPs. Reclutado como CTO transformacional por el CEO Dan Herscovici, con quien trabajó en Comcast por casi una década. Ha renovado casi toda la organización técnica en 6 meses. Su carrera se enfoca en construir tecnología escalable que fortalece la conexión entre ISPs y sus clientes. Co-fundador de dos startups previas.</p>
+    </div>
+  </div>
 
-        <div class="form-group">
-          <label for="role">Rol <span class="required">*</span></label>
-          <input type="text" id="role" name="Rol" placeholder="Ej: CTO, VP Engineering, Director IT" required>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">OM</div>
+      <div><div class="card-name">Oleg Mezhvynskiy</div><div class="card-title">SVP Engineering, Sports</div><div class="card-company">DraftKings</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">SVP de Engineering en DraftKings, supervisa Online Sportsbook engineering incluyendo sports intelligence, trading intelligence, odds calculation e infraestructura. Se unió a DraftKings a través de la adquisición de SBTech en 2020 desde Bulgaria, donde construyó el motor de sportsbook. Reporta al CTO Zach Maybury y lidera la iniciativa más estratégica de la compañía: el SuperApp unificado.</p>
+    </div>
+  </div>
 
-        <div class="form-group">
-          <label for="company">Empresa <span class="required">*</span></label>
-          <input type="text" id="company" name="Empresa" placeholder="Nombre de tu empresa" required>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">LS</div>
+      <div><div class="card-name">Lee Slezak</div><div class="card-title">SVP, AI, Data & Analytics</div><div class="card-company">Lennar</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Ejecutivo de tecnología transformacional enfocado en impulsar resultados de negocio a través de datos y analytics. Previamente VP de IT Architecture, Emerging Technology & Analytics en Tyson Foods, donde lideró la adopción de AI y analytics avanzados a escala empresarial. Advisor de startups tecnológicas. Speaker en AWS re:Invent 2024 sobre AI y analytics a escala empresarial. Expertise en cloud architecture, ML operations y tecnologías emergentes.</p>
+    </div>
+  </div>
 
-        <button type="submit" class="btn-submit" id="submitBtn">Confirmar inscripción</button>
-      </form>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">AP</div>
+      <div><div class="card-name">Andy Priestley</div><div class="card-title">COO</div><div class="card-company">Jabil</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">EVP y COO de Jabil desde enero 2026. En la compañía desde 1996, ha ocupado posiciones de creciente responsabilidad durante casi 30 años. Previamente EVP de Global Business Units (2024) y SVP de Global Business Units (2014). Enfocado en Industrial Engineering best practices para estandarizar operaciones en las más de 100 plantas de Jabil a nivel global. Nativo de Escocia.</p>
+    </div>
+  </div>
 
-      <div class="success-message" id="successMessage">
-        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-        </svg>
-        <h4>¡Registro exitoso!</h4>
-        <p>Tu inscripción ha sido confirmada.<br>Se descargó automáticamente una invitación de calendario (.ics).</p>
-        <p style="margin-top:16px;font-size:13px;color:#888;">También podés agregarlo manualmente:</p>
-        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;flex-wrap:wrap;">
-          <a id="googleCalLink" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#4285f4;color:#fff;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Google Calendar
-          </a>
-          <a id="outlookCalLink" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#0078d4;color:#fff;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Outlook
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">YL</div>
+      <div><div class="card-name">Yotam Lemberger</div><div class="card-title">SVP and Head of Engineering</div><div class="card-company">Compass</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">SVP y Head de Engineering en Compass, la empresa de real estate residencial más grande de EE.UU. por volumen de ventas. Promovido en marzo 2026 tras unirse en 2021. Más de una década en empresas tech líderes: AWS (lideró el equipo de S3 Index), Microsoft (Azure Incubations, Dapr) y Uber (marketplace technologies). Ha liderado productos como Compass AI, Reverse Prospecting y Compass One. B.Sc. en Computer Science del Academic College of Tel-Aviv.</p>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    &copy; 2026, Amazon Web Services, Inc. o sus afiliadas. Todos los derechos reservados. Amazon Confidencial y Marca Registrada.
-  </footer>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">MV</div>
+      <div><div class="card-name">Manuel Valdez</div><div class="card-title">CTO (CTDO)</div><div class="card-company">GoTo Foods</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">CTO de GoTo Foods (antes Focus Brands), franquiciador de 7 marcas icónicas de QSR incluyendo Cinnabon, Jamba y Auntie Anne's. Más de 30 años de experiencia en transformación digital, arquitectura empresarial e innovación en experiencia del cliente. Lidera la estrategia tecnológica y de datos de la compañía, incluyendo iniciativas de GenAI, migración cloud y modernización de plataformas digitales para 7,100+ restaurantes.</p>
+    </div>
+  </div>
 
-  <script>
-    // ─────────────────────────────────────────────
-    // IMPORTANTE: Reemplazá YOUR_FORM_ID con tu ID de Formspree.
-    // 1. Andá a https://formspree.io y creá una cuenta gratuita.
-    // 2. Creá un nuevo form y configurá el email destino: miramonl@amazon.com
-    // 3. Copiá el form ID (ej: "xpzvqkdl") y pegalo abajo.
-    // ─────────────────────────────────────────────
-    const FORMSPREE_ID = 'mvzdvkgl';
-    const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">AT</div>
+      <div><div class="card-name">Alvaro Teijeiro</div><div class="card-title">Co-Founder & CTO</div><div class="card-company">RecargaPay</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Emprendedor tech y Co-Fundador de RecargaPay, considerado el ecosistema de pagos móviles y servicios financieros digitales más grande de Brasil, con 6-10 millones de usuarios activos. Previamente co-fundó Fnbox (2001), company builder de negocios de Internet globales. Creó múltiples productos exitosos incluyendo Sonico.com (la red social más grande de Latam, vendida a Match.com/IAC) y Recarga.com.</p>
+    </div>
+  </div>
 
-    // ── Calendar event data ──
-    // 12 Mayo 2026, 3:00 PM - 4:00 PM Eastern (UTC-5 = EST, UTC-4 = EDT)
-    // Mayo es horario de verano (EDT = UTC-4), así que 3PM EDT = 19:00 UTC
-    const EVENT = {
-      title: 'Cultura de Innovación de Amazon — SAP Sapphire 2026',
-      description: 'Sesión sobre la Cultura de Innovación de Amazon.\\nOrador: Juan Ignacio Filips, Country Manager Argentina, Uruguay & Paraguay.\\nTemas: Leadership Principles, Working Backwards, flywheels, equipos two-pizza y más.',
-      location: 'Bayhill 19, Hyatt Meeting Room',
-      startUTC: '20260512T190000Z',  // 3:00 PM EDT
-      endUTC:   '20260512T200000Z',  // 4:00 PM EDT
-      startLocal: '20260512T150000',
-      endLocal:   '20260512T160000',
-    };
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">GA</div>
+      <div><div class="card-name">Gabriel Antelo</div><div class="card-title">VP of Technology</div><div class="card-company">Globant</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">VP de Technology para AI Studio Partnerships en Globant (28,700+ empleados, 30+ países), basado en Buenos Aires. Responsable de impulsar estrategia tecnológica e innovación en la división de AI Studio Partnerships. Parte del equipo senior que transforma Globant en una organización AI-native, impulsando la plataforma GEAI y el shift hacia servicios basados en agentic AI.</p>
+    </div>
+  </div>
 
-    function downloadICS() {
-      const ics = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//AWS//Culture of Innovation//ES',
-        'BEGIN:VEVENT',
-        'DTSTART:' + EVENT.startUTC,
-        'DTEND:' + EVENT.endUTC,
-        'SUMMARY:' + EVENT.title,
-        'DESCRIPTION:' + EVENT.description.replace(/\n/g, '\\n'),
-        'LOCATION:' + EVENT.location,
-        'STATUS:CONFIRMED',
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">AV</div>
+      <div><div class="card-name">Alexander Vicondoa</div><div class="card-title">AI Director</div><div class="card-company">Mercado Libre</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Director de AI en MercadoLibre ($28.9B revenue, 100M+ usuarios activos), con más de 20 años de experiencia en IT. Lidera el ecosistema de plataformas de agentic AI incluyendo Verdi, Verdi Flox, Maxwell y Maxwell V2 — plataformas Low Code/No Code propietarias que permiten construir AI agents. Su portfolio abarca múltiples iniciativas estratégicas de AI en desarrollo y producción.</p>
+    </div>
+  </div>
 
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Cultura_de_Innovacion_SAP_Sapphire_2026.ics';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">JC</div>
+      <div><div class="card-name">Juan José Correa</div><div class="card-title">CEO</div><div class="card-company">Eron International / Directa24 / Jarix</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">CEO y co-fundador de Eron International, hub tecnológico global de orquestación de pagos con 15+ años de experiencia cross-border y 300+ métodos de pago en 40+ países. También CEO y Co-fundador de Jarix, consultora de ciberseguridad que emergió del equipo de seguridad de Eron y ahora sirve a fintechs en LATAM con soluciones de AI nativas en la nube.</p>
+    </div>
+  </div>
 
-    function setupCalendarLinks() {
-      // Google Calendar
-      const gcalParams = new URLSearchParams({
-        action: 'TEMPLATE',
-        text: EVENT.title,
-        dates: EVENT.startUTC.replace('Z','') + 'Z/' + EVENT.endUTC.replace('Z','') + 'Z',
-        details: EVENT.description.replace(/\\n/g, '\n'),
-        location: EVENT.location,
-      });
-      document.getElementById('googleCalLink').href = 'https://calendar.google.com/calendar/render?' + gcalParams.toString();
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">RP</div>
+      <div><div class="card-name">Ronald Pacheco Chirinos</div><div class="card-title">CTO</div><div class="card-company">Auna</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">CTO actuante de AUNA (NYSE: AUNA), plataforma de salud integrada en Perú, Colombia y México que sirve ~10.8 millones de vidas. 7 años como líder operacional de tecnología. Lideró la migración de infraestructura on-premise a cloud en 2020. Impulsó el desarrollo de plataformas de salud digital y la interoperabilidad de sistemas clínicos. M.Sc. en Computer Science de UNICAMP, Brasil.</p>
+    </div>
+  </div>
 
-      // Outlook Web
-      const outlookParams = new URLSearchParams({
-        path: '/calendar/action/compose',
-        rru: 'addevent',
-        subject: EVENT.title,
-        startdt: '2026-05-12T19:00:00Z',
-        enddt: '2026-05-12T20:00:00Z',
-        body: EVENT.description.replace(/\\n/g, '\n'),
-        location: EVENT.location,
-      });
-      document.getElementById('outlookCalLink').href = 'https://outlook.live.com/calendar/0/deeplink/compose?' + outlookParams.toString();
-    }
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">CA</div>
+      <div><div class="card-name">César Astigarraga</div><div class="card-title">President & CEO</div><div class="card-company">ITTI / Grupo Vázquez</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Presidente y CEO de ITTI, brazo tecnológico de Grupo Vázquez en Paraguay. Ingeniero en Sistemas de la Universidad Nacional de Asunción con 15+ años liderando equipos en empresas financieras y tecnológicas. Lideró la transformación digital de Credicentro a Ueno Bank (de 40K a 2.1M clientes en 18 meses). VP de la Cámara Fintech de Paraguay. Programas ejecutivos en IAE Business School y Singularity en Silicon Valley.</p>
+    </div>
+  </div>
 
-    const form = document.getElementById('registrationForm');
-    const submitBtn = document.getElementById('submitBtn');
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">DV</div>
+      <div><div class="card-name">Diego Vaglianico</div><div class="card-title">EVP & CIO</div><div class="card-company">Evertec</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">EVP y CIO de EVERTEC (NYSE: EVTC), empresa líder de fintech y procesamiento de transacciones en 26 países de LATAM y el Caribe (~$925M revenue, 3B+ transacciones/año). Más de 30 años de experiencia en tecnología, operaciones y pagos, con roles ejecutivos en Interbanking S.A., Prisma Medios de Pago y Mastercard. Ingeniero de la Universidad del Salvador y MBA de Universidad ESEADE, Argentina.</p>
+    </div>
+  </div>
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">VP</div>
+      <div><div class="card-name">Vicente Pava</div><div class="card-title">CEO</div><div class="card-company">SIESA</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">CEO de SIESA, el mayor proveedor ERP independiente de Colombia con 40+ años en el mercado y más de 10,000 clientes. Estratega de negocios con experiencia liderando y transformando empresas Fortune 500 y respaldadas por private equity. Expertise en P&L management, transformación digital y liderazgo cross-funcional en sectores de banca, telecomunicaciones, tecnología, salud, manufactura y retail.</p>
+    </div>
+  </div>
 
-      // Validation
-      const fields = ['firstName', 'lastName', 'email', 'role', 'company'];
-      let valid = true;
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">JC</div>
+      <div><div class="card-name">Jorge Castaño Gutiérrez</div><div class="card-title">Corporate VP, Financial Assets & Efficiency</div><div class="card-company">Grupo Aval</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">VP Corporativo de Activos Financieros y Eficiencia en Grupo Aval, el conglomerado financiero más grande de Colombia (4 bancos, 100+ subsidiarias, 15.8M clientes). Ex-Director de Fogafín y ex-Superintendente Financiero de Colombia (2017-2023). Especialización en derecho financiero y de valores de la Universidad Externado de Colombia y maestría en desarrollo económico de la Universidad Carlos III de Madrid.</p>
+    </div>
+  </div>
 
-      fields.forEach(function(id) {
-        const input = document.getElementById(id);
-        if (!input.value.trim()) {
-          input.style.borderColor = '#d13212';
-          valid = false;
-        } else {
-          input.style.borderColor = '#d5d5d5';
-        }
-      });
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">AS</div>
+      <div><div class="card-name">Aldo Sarti</div><div class="card-title">Digital Transformation Director</div><div class="card-company">Banrural</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Director de Transformación Digital en Banrural, el segundo banco más grande de Guatemala. Más de 25 años de experiencia en tecnología y transformación. Lidera iniciativas estratégicas de alto impacto enfocadas en innovación, experiencia de usuario, eficiencia operacional y crecimiento de negocio. Ha gestionado equipos a gran escala y proyectos clave de reingeniería de procesos e implementación tecnológica.</p>
+    </div>
+  </div>
 
-      const emailInput = document.getElementById('email');
-      if (emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-        emailInput.style.borderColor = '#d13212';
-        valid = false;
-      }
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">JR</div>
+      <div><div class="card-name">Jorge Mario Ruiz</div><div class="card-title">VP Retail Banking</div><div class="card-company">Banrural</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">SVP de Retail Banking en Banrural con más de 30 años de experiencia en el sector bancario, construyendo su carrera en instituciones regionales y multinacionales. Background sólido en pagos y banca de consumo. En Banrural desde febrero 2024, lidera el negocio de consumo y PyMEs, responsable del P&L de la división de Retail Banking y la estrategia comercial del banco.</p>
+    </div>
+  </div>
 
-      if (!valid) return;
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">EB</div>
+      <div><div class="card-name">Emiliano Fernandez Balaguè</div><div class="card-title">Chairman</div><div class="card-company">Ferbal Capital</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">Chairman de Ferbal Capital.</p>
+    </div>
+  </div>
 
-      // Set reply-to
-      document.getElementById('replyTo').value = emailInput.value;
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">PS</div>
+      <div><div class="card-name">Paul Sciaudone</div><div class="card-title">Vice President, Engineering</div><div class="card-company">HP Inc</div></div>
+    </div>
+    <div class="card-body">
+      <p class="card-bio">VP de Engineering para Platform and Print Software en la Technology and Innovation Organization (TIO) de HP Inc, basado en Boston. Supervisa el ecosistema conectado global de HP con más de 400 millones de dispositivos. Lidera la consolidación de 12+ plataformas cloud en la HP Intelligence Platform (HPIP) y la transformación de software con agentic AI. Previamente en Accenture (Intelligent Products & Platforms) y Akamai Technologies, especializado en platform engineering y developer experience.</p>
+    </div>
+  </div>
 
-      // Loading state
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
+</div><!-- end cards-grid -->
+</div><!-- end container -->
 
-      try {
-        const formData = new FormData(form);
-        const response = await fetch(FORMSPREE_URL, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
+<div style="text-align:center; padding:40px; color:rgba(255,255,255,0.3); font-size:12px; border-top:1px solid #1a1a1a;">
+  F1 Miami Grand Prix 2026 – AWS Customer Executive Briefing – Confidential
+</div>
 
-        if (response.ok) {
-          form.style.display = 'none';
-          document.querySelector('.form-card h3').style.display = 'none';
-          document.querySelector('.form-sub').style.display = 'none';
-          document.getElementById('successMessage').style.display = 'block';
-          setupCalendarLinks();
-          downloadICS();
-        } else {
-          throw new Error('Error en el envío');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Confirmar inscripción';
-        alert('Hubo un error al enviar el formulario. Por favor intentá de nuevo.');
-      }
-    });
-
-    // Clear error on input
-    document.querySelectorAll('#registrationForm input').forEach(function(input) {
-      input.addEventListener('input', function() {
-        this.style.borderColor = '#d5d5d5';
-      });
-    });
-  </script>
 </body>
 </html>
